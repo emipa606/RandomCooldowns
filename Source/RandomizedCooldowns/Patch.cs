@@ -12,13 +12,12 @@ internal class Patch
     private const float Midpoint = 0.7f;
     private const float Highpoint = 1f;
 
-    private static readonly SimpleCurve RandomCooldownTicksCurve = new SimpleCurve
-    {
-        // 70% of -21/2 + 30% of +49/2 = 0. Range doesn't include -22 or 50.
+    private static readonly SimpleCurve RandomCooldownTicksCurve =
+    [
         new CurvePoint(Lowpoint, -22),
         new CurvePoint(Midpoint, 0),
         new CurvePoint(Highpoint, 50)
-    };
+    ];
 
     private static void Postfix(Verb __instance)
     {

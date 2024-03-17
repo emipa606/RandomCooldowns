@@ -13,7 +13,6 @@ internal static class HarmonyPatches
 {
     static HarmonyPatches()
     {
-        var harmony = new Harmony("iron_xides.random_cooldowns");
-        harmony.PatchAll();
+        new Harmony("iron_xides.random_cooldowns").PatchAll();
     }
 }
