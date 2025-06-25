@@ -6,13 +6,13 @@ using Verse;
 namespace RandomCooldowns;
 
 [HarmonyPatch(typeof(Verb), "TryCastNextBurstShot")]
-internal class Patch
+internal class Verb_TryCastNextBurstShot
 {
     private const float Lowpoint = 0f;
     private const float Midpoint = 0.7f;
     private const float Highpoint = 1f;
 
-    private static readonly SimpleCurve RandomCooldownTicksCurve =
+    private static readonly SimpleCurve randomCooldownTicksCurve =
     [
         new CurvePoint(Lowpoint, -22),
         new CurvePoint(Midpoint, 0),
@@ -30,7 +30,7 @@ internal class Patch
         }
 
         // Don't modify extremely short cooldowns.
-        if (__instance.CasterPawn?.stances?.curStance is not Stance_Cooldown stance || stance.ticksLeft <= 29)
+        if (__instance.CasterPawn?.stances?.curStance is not Stance_Cooldown { ticksLeft: > 29 } stance)
         {
             return;
         }
@@ -41,23 +41,23 @@ internal class Patch
         if (levelInt != null)
         {
             var skill = Math.Min((float)levelInt, 20);
-            float skillpotency;
+            float skillPotency;
             switch (skill)
             {
                 case < 10:
                     // If below 10 skill, add lower possible cooldown descrease in the randomizer
-                    skillpotency = 1f * (skill / 10f);
-                    range.min = Midpoint - (Midpoint * skillpotency);
+                    skillPotency = 1f * (skill / 10f);
+                    range.min = Midpoint - (Midpoint * skillPotency);
                     break;
                 case > 10:
                     // If above 10 skill, add lower possible cooldown increase in the randomizer
-                    skillpotency = 1f * ((skill - 10) / 10f);
-                    range.max = Highpoint - ((Highpoint - Midpoint) * skillpotency);
+                    skillPotency = 1f * ((skill - 10) / 10f);
+                    range.max = Highpoint - ((Highpoint - Midpoint) * skillPotency);
                     break;
             }
         }
 
-        var random_ticks = (int)RandomCooldownTicksCurve.Evaluate(Rand.Range(range.min, range.max));
+        var random_ticks = (int)randomCooldownTicksCurve.Evaluate(Rand.Range(range.min, range.max));
         stance.ticksLeft += random_ticks;
         //Log.Message(
         //    $"{__instance.CasterPawn.NameFullColored} skill {skill}, potency {skillpotency}, range {range}, ticks {random_ticks}");

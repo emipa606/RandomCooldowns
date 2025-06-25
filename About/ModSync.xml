@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>cf218362-4f0b-43bc-bdc2-6233adcef242</ID>
   <ModName>Random Cooldowns (Continued)</ModName>
-  <Version>1.5.0</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+
