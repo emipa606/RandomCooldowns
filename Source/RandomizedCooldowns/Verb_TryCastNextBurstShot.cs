@@ -6,7 +6,7 @@ using Verse;
 namespace RandomCooldowns;
 
 [HarmonyPatch(typeof(Verb), "TryCastNextBurstShot")]
-internal class Verb_TryCastNextBurstShot
+internal static class Verb_TryCastNextBurstShot
 {
     private const float Lowpoint = 0f;
     private const float Midpoint = 0.7f;
@@ -19,7 +19,7 @@ internal class Verb_TryCastNextBurstShot
         new CurvePoint(Highpoint, 50)
     ];
 
-    private static void Postfix(Verb __instance)
+    public static void Postfix(Verb __instance)
     {
         // A lot of things that aren't ranged attacks use TryCastNextBurstShot.
         // Also, don't alter cooldown between burst shots.
@@ -59,7 +59,5 @@ internal class Verb_TryCastNextBurstShot
 
         var random_ticks = (int)randomCooldownTicksCurve.Evaluate(Rand.Range(range.min, range.max));
         stance.ticksLeft += random_ticks;
-        //Log.Message(
-        //    $"{__instance.CasterPawn.NameFullColored} skill {skill}, potency {skillpotency}, range {range}, ticks {random_ticks}");
     }
 }

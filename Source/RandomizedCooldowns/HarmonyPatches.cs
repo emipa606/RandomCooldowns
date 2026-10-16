@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Reflection;
+using HarmonyLib;
 using Verse;
 
 namespace RandomCooldowns;
@@ -13,6 +14,6 @@ internal static class HarmonyPatches
 {
     static HarmonyPatches()
     {
-        new Harmony("iron_xides.random_cooldowns").PatchAll();
+        new Harmony("iron_xides.random_cooldowns").PatchAll(Assembly.GetExecutingAssembly());
     }
 }

@@ -1,6 +1,6 @@
 # [Random Cooldowns (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2676939859)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Iron Xidess mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2282505419
@@ -8,9 +8,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2282505419
 Since it was requested in the comments the randomness of cooldowns is now weighted depending on the shooting-skill of the pawn.
 Lower skilled pawns (less than 10) will more often have increased cooldowns while higher skilled pawns (more than 10 skill) will more often have decreased cooldowns.
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 Adds a random value to ranged attack cooldowns, so pawns shoot at an uneven pace.
   
@@ -27,13 +27,13 @@ Uses Harmony.
 Known issues:
 - If you shoot at an enemy before trying to run away, you may be stuck in cooldown for longer than you expect, and then die and get upset.
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -41,4 +41,4 @@ Known issues:
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/RandomCooldowns?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2676939859) | tags:  cooldowns
+[![Image](https://img.shields.io/github/v/release/emipa606/RandomCooldowns?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2676939859) | cooldowns
